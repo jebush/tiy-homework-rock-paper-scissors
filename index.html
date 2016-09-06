@@ -14,9 +14,11 @@
 
 <form id="actionForm">
     <label>What's your move?</label>
-    <button type="button" value="rock">Rock</button>
-    <button type="button" value="paper">Paper</button>
-    <button type="button" value="scissors">Scissors</button>
+    <div>
+        <button type="button" value="rock">Rock</button>
+        <button type="button" value="paper">Paper</button>
+        <button type="button" value="scissors">Scissors</button>
+    </div>
 </form>
 
 <h2 id="outcome" class="win"></h2>
@@ -25,12 +27,13 @@
 <div id="game">
     <div id="player">
         <div class="score">Player: <span></span></div>
+        <img class="transparent" src="images/transparent.png" />
     </div>
     <div id="computer">
         <div class="score">Computer: <span></span></div>
+        <img class="transparent" src="images/transparent.png" />
     </div>
 </div>
-
 
 </body>
 </html>

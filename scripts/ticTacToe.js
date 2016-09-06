@@ -62,8 +62,6 @@ $(function(){
 
             countDown--;
             $("#counter").append(countDown + "... ");
-
-
         }, 1000);
 
     });
