@@ -16,7 +16,6 @@ function getResult(playerMove, computerMove){
 
 $(function(){
 
-    // get references to the divs for both the player and computer
     var player = $("#player");
     var computer = $("#computer");
 
@@ -31,23 +30,54 @@ $(function(){
 
     var outcome = $("#outcome");
 
+    var counter = $("#counter");
+
     $("#actionForm").find("button").click(function(){
         // reset display
         outcome.removeClass("win lose tie");
         outcome.text("");
+        outcome.hide();
+
         player.removeClass("rock paper scissors");
         computer.removeClass("rock paper scissors");
 
         // player move
         var playerMove = $(this).val();
-        player.addClass(playerMove);
 
         // computer move
         var computerMove = moves[Math.round(Math.random() * 2)];
-        computer.addClass(computerMove);
+
+        var countDown = 3;
+
+        counter.text("");
+        counter.show();
+
+        $("#counter").append(countDown + "... ");
+        var timer = setInterval(function () {
+            if(countDown == 1){
+                clearInterval(timer);
+                displayOutcome(playerMove, computerMove);
+                return;
+            }
+
+            countDown--;
+            $("#counter").append(countDown + "... ");
+
+
+        }, 1000);
+
+    });
+
+
+    function displayOutcome(playerMove, computerMove){
+        counter.hide();
+        outcome.show();
 
         // get the result of the game
         var result = getResult(playerMove, computerMove);
+
+        player.addClass(playerMove);
+        computer.addClass(computerMove);
 
         if(result == 0){
             // tie game
@@ -67,8 +97,8 @@ $(function(){
 
         playerScoreDisplay.text(playerScore);
         computerScoreDisplay.text(computerScore);
-
-    });
+    }
 
 });
+
 
