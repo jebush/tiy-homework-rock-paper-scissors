@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/rockPaperScissors.iml" filepath="$PROJECT_DIR$/rockPaperScissors.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tiy-homework-rock-paper-scissors.iml" filepath="$PROJECT_DIR$/tiy-homework-rock-paper-scissors.iml" />
     </modules>
   </component>
 </project>
